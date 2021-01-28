@@ -460,7 +460,7 @@
                             </span>
                         </a>
                         <div id="site-faq-general-q6-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Status messenger does not use one central server to and from which communication can be blocked. Instead Status uses a distributed network of mail servers. This ensures resilience of the network. If a mail server is shut down you can connect to another mail server or start <a href='https://discuss.status.im/t/get-your-node-running/1488/4?u=hester' target='_blank'>running your own</a>. However, Status and mail servers in the network still rely on having an Internet connection. If the Internet is shut down through telecom providers you will not be able to use Status.</div>
+                            <div class="description">Status messenger does not use one central server to and from which communication can be blocked. Instead Status uses a distributed network of 'Status nodes'. This ensures resilience of the network. If a Status node is shut down you can connect to another node or start <a href='https://discuss.status.im/t/get-your-node-running/1488/4?u=hester' target='_blank'>running your own</a>. However, Status and nodes in the network still rely on having an Internet connection. If the Internet is shut down through telecom providers you will not be able to use Status.</div>
                         </div>
                     </div>
                     
@@ -702,7 +702,7 @@
                             </span>
                         </a>
                         <div id="site-faq-profile-and-settings-q8-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Your profile only exists locally. Any messages you have sent will remain on mail servers for 30 days. After that, the message cease to exist. Transactions you have made with using an account in your wallet will remain on the blockchain.</div>
+                            <div class="description">Your profile only exists locally. Any messages you have sent will remain on Status nodes for 30 days. After that, the message cease to exist. Transactions you have made with using an account in your wallet will remain on the blockchain.</div>
                         </div>
                     </div>
                     
@@ -735,19 +735,19 @@
                             </span>
                         </a>
                         <div id="site-faq-messenger-q1-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Yes, they are. Status currently uses Whisper, the messaging protocol of the Ethereum stack.Whisper provides peer-to-peer messaging with zero reliance on centralized servers, data centers or service providers. <br><br>Every message is end-to-end encrypted, and broadcast to every single peer in the network for a set time. This makes it not only impossible for unintended audiences to read the content of messages, but also to see who sends messages to whom. For private 1:1 messages, only the intended recipient of a message is able to decrypt the content. For public chats, anyone who knows the name of the chat can decrypt the content. <br><br>An additional safeguard is the use of a new encryption key with every message, after the initial key exchange between users (Perfect Forward Secrecy). If your message key is compromised, only the message for that particular key is compromised. There is no access to past messages.<br><br>The privacy Whisper provides does come at the cost of high data usage. Development of an alternative is ongoing. You can follow progress <a href='https://forum.vac.dev/t/waku-project-and-progress/24' target='_blank'>here</a>.</div>
+                            <div class="description">Yes, they are. Status currently uses Waku, the messaging protocol of the Ethereum stack. Waku provides peer-to-peer messaging with zero reliance on centralized servers, data centers or service providers. <br><br>Every message is end-to-end encrypted, and broadcast to every single peer in the network for a set time. This makes it not only impossible for unintended audiences to read the content of messages, but also to see who sends messages to whom. For private 1:1 messages, only the intended recipient of a message is able to decrypt the content. For public chats, anyone who knows the name of the chat can decrypt the content. <br><br>An additional safeguard is the use of a new encryption key with every message, after the initial key exchange between users (Perfect Forward Secrecy). If your message key is compromised, only the message for that particular key is compromised. There is no access to past messages.<br><br>The privacy Whisper provides does come at the cost of high data usage. Development of an alternative is ongoing. You can follow progress <a href='https://forum.vac.dev/t/waku-project-and-progress/24' target='_blank'>here</a>.</div>
                         </div>
                     </div>
                     
                     <div class="accordion bg-primary-100 mt-12 p-6">
                         <a href="#" class="text-2xl collapsed flex items-center justify-between custom-accordion-trigger" data-toggle="collapse" data-target="#site-faq-messenger-q3-question" aria-expanded="false" aria-controls="site-faq-messenger-q3-question">
-                            Who hosts the mail servers that store messages?
+                            Who hosts the Status nodes that store messages?
                             <span class="ml-8 text-primary-800 custom-accordion-arrow">
                                 <img src="/img/icon-arrow-down.svg">
                             </span>
                         </a>
                         <div id="site-faq-messenger-q3-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Whisper requires a special kind of Ethereum node to store and transfer messages. Status is the only instance of Whisper being used in production. Thus, Status hosts a set of these special nodes in order to support its users. However, anyone is able to host a mail server node with the proper hardware. You can find instructions on how to do so <a href='https://discuss.status.im/t/get-your-node-running/1488/2' target='_blank'>here</a>.</div>
+                            <div class="description">Waku requires a special kind of Ethereum node to store and transfer messages. Status is the only instance of Waku being used in production. Thus, Status hosts a set of these special nodes in order to support its users. However, anyone is able to host a Status node with the proper hardware. You can find instructions on how to do so <a href='https://discuss.status.im/t/get-your-node-running/1488/2' target='_blank'>here</a>.</div>
                         </div>
                     </div>
                     
@@ -777,13 +777,13 @@
                     
                     <div class="accordion bg-primary-100 mt-12 p-6">
                         <a href="#" class="text-2xl collapsed flex items-center justify-between custom-accordion-trigger" data-toggle="collapse" data-target="#site-faq-messenger-q9-question" aria-expanded="false" aria-controls="site-faq-messenger-q9-question">
-                            Does it matter which mail server I select?
+                            Does it matter which Status node I select?
                             <span class="ml-8 text-primary-800 custom-accordion-arrow">
                                 <img src="/img/icon-arrow-down.svg">
                             </span>
                         </a>
                         <div id="site-faq-messenger-q9-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Mail servers that are closer to you in geographic distance will return messages faster. It’s recommended that you keep the default setting for automatic mail server selection. With automatic selection enabled, Status can measure the latency of messages between servers and choose the fastest one for you. <br><br>If you want to connect to your own mail server, or to one running on a specific trusted device, you can add a custom mail server.</div>
+                            <div class="description">Status nodes that are closer to you in geographic distance will return messages faster. It’s recommended that you keep the default setting for automatic Status node selection. With automatic selection enabled, Status can measure the latency of messages between servers and choose the fastest one for you. <br><br>If you want to connect to your own Status node, or to one running on a specific trusted device, you can add a custom Status node.</div>
                         </div>
                     </div>
                     
@@ -799,7 +799,7 @@
                             </span>
                         </a>
                         <div id="site-faq-messenger-q2-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Messages are not stored on the blockchain and do not cost anything to send. Messages are stored on a mail server for 30 days, and on your phone once you receive them by opening Status and connecting to the network. To reach you, messages pass over devp2p—the transport layer for Whisper—but are not transported through the Ethereum Virtual Machine. </div>
+                            <div class="description">Messages are not stored on the blockchain and do not cost anything to send. By default, encrypted messages are cached on Status nodes for 30 days, and on your phone once you receive them by opening Status and connecting to the network. To reach you, messages pass over devp2p—the transport layer for Waku—but are not transported through the Ethereum Virtual Machine. </div>
                         </div>
                     </div>
                     
