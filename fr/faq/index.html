@@ -735,19 +735,19 @@
                             </span>
                         </a>
                         <div id="site-faq-messenger-q1-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Yes, they are. Status currently uses Waku, the messaging protocol of the Ethereum stack. Waku provides peer-to-peer messaging with zero reliance on centralized servers, data centers or service providers. <br><br>Every message is end-to-end encrypted, and broadcast to every single peer in the network for a set time. This makes it not only impossible for unintended audiences to read the content of messages, but also to see who sends messages to whom. For private 1:1 messages, only the intended recipient of a message is able to decrypt the content. For public chats, anyone who knows the name of the chat can decrypt the content. <br><br>An additional safeguard is the use of a new encryption key with every message, after the initial key exchange between users (Perfect Forward Secrecy). If your message key is compromised, only the message for that particular key is compromised. There is no access to past messages.<br><br>The privacy Whisper provides does come at the cost of high data usage. Development of an alternative is ongoing. You can follow progress <a href='https://forum.vac.dev/t/waku-project-and-progress/24' target='_blank'>here</a>.</div>
+                            <div class="description">Yes. Status uses Waku, a peer-to-peer protocol for private, secure and censorship-resistant communication, built by the <a href='https://vac.dev' target='_blank'>Vac Team</a>. Waku provides resilient messaging with zero dependence on centralized servers, data centers or service providers. <br><br>Every message is end-to-end encrypted, and broadcast to every single peer in the network. This makes it not only impossible for unintended audiences to read the content of messages, but also to see who sends messages to who. The sender information is always encrypted, rendering it impossible for Status nodes to collect any communication metadata. For private 1:1 messages, only the intended recipient of a message is able to decrypt the content. For public chats, anyone who knows the name of the chat can decrypt the content. <br><br>An additional safeguard is the use of a new encryption key with every message after the initial key exchange between users (perfect forward secrecy). If your message key is compromised, only the message for that particular key is compromised, and not for any prior messages.</div>
                         </div>
                     </div>
                     
                     <div class="accordion bg-primary-100 mt-12 p-6">
                         <a href="#" class="text-2xl collapsed flex items-center justify-between custom-accordion-trigger" data-toggle="collapse" data-target="#site-faq-messenger-q3-question" aria-expanded="false" aria-controls="site-faq-messenger-q3-question">
-                            Who hosts the Status nodes that store messages?
+                            Who hosts the Status nodes that temporarily store encrypted messages?
                             <span class="ml-8 text-primary-800 custom-accordion-arrow">
                                 <img src="/img/icon-arrow-down.svg">
                             </span>
                         </a>
                         <div id="site-faq-messenger-q3-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Waku requires a special kind of Ethereum node to store and transfer messages. Status is the only instance of Waku being used in production. Thus, Status hosts a set of these special nodes in order to support its users. However, anyone is able to host a Status node with the proper hardware. You can find instructions on how to do so <a href='https://discuss.status.im/t/get-your-node-running/1488/2' target='_blank'>here</a>.</div>
+                            <div class="description">Waku requires a special kind of Status node that stores encrypted messages while users may be offline. Currently, Status hosts a set of these special nodes in order to support its users. However, anyone is able to host such a Status node with the proper hardware. You can find instructions on how to do so <a href='https://status.im/technical/run_status_node.html' target='_blank'>here</a>.</div>
                         </div>
                     </div>
                     
@@ -783,7 +783,7 @@
                             </span>
                         </a>
                         <div id="site-faq-messenger-q9-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Status nodes that are closer to you in geographic distance will return messages faster. It’s recommended that you keep the default setting for automatic Status node selection. With automatic selection enabled, Status can measure the latency of messages between servers and choose the fastest one for you. <br><br>If you want to connect to your own Status node, or to one running on a specific trusted device, you can add a custom Status node.</div>
+                            <div class="description">Status nodes that are closer to you in geographic distance will return messages faster. It's recommended that you keep the default setting for automatic Status node selection. With automatic selection enabled, Status can measure the latency of messages between servers and choose the fastest one for you. <br><br>If you want to connect to your own Status node, or to one running on a specific trusted device, you can add a custom Status node.</div>
                         </div>
                     </div>
                     
@@ -799,7 +799,7 @@
                             </span>
                         </a>
                         <div id="site-faq-messenger-q2-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">Messages are not stored on the blockchain and do not cost anything to send. By default, encrypted messages are cached on Status nodes for 30 days, and on your phone once you receive them by opening Status and connecting to the network. To reach you, messages pass over devp2p—the transport layer for Waku—but are not transported through the Ethereum Virtual Machine. </div>
+                            <div class="description">Messages are not stored on the blockchain and do not cost anything to send. By default, encrypted messages are cached on Status nodes for 30 days so that you can still receive messages even if your phone is offline. Even when encrypted messages are stored in this manner, it is impossible for the Status nodes to read the contents of any of the messages, or to know who is talking to who.</div>
                         </div>
                     </div>
                     
@@ -811,7 +811,7 @@
                             </span>
                         </a>
                         <div id="site-faq-messenger-q4-question" class="mt-8 hidden text-gray-500 collapse accordion-content">
-                            <div class="description">If you want to add a custom name, you can register an ENS username. Go to Profile > ENS usernames. When you register or connect an existing <a href='https://docs.google.com/document/d/1NO7wBRQU-cxKvoxvUx0hCyCbyaoGfdlI6l-d1_9U4mI/edit#bookmark=id.zgy4mci21861' target='_blank'>ENS username</a> to your Status chat key, others can then find you by this username. You can also display it in place of your three word name.</div>
+                            <div class="description">If you want to add a custom name, you can register an ENS username. Go to Profile > ENS usernames. When you register or connect an existing ENS username to your Status chat key, others can then find you by this username. You can also display it in place of your three word name.</div>
                         </div>
                     </div>
                     
@@ -1411,7 +1411,6 @@
                 <div class="js-collapse custom-accordion" id="footer-nav-4">
                     <ul class="text-lg font-body text-gray-200">
                         <li class="mt-4"><a href="https://keycard.tech/" target="_blank">Keycard</a></li>
-                        <li class="mt-4"><a href="https://dap.ps/" target="_blank">Dap.ps</a></li>
                         <li class="mt-4"><a href="https://assemble.fund/" target="_blank">Assembler</a></li>
                         <li class="mt-4"><a href="https://embark.status.im/" target="_blank">Embarquer</a></li>
                         <li class="mt-4"><a href="https://subspace.status.im/" target="_blank">Subspace</a></li>
